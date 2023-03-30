@@ -29,7 +29,7 @@ fi
 
 # Configure dav.conf
 if [ "x$LOCATION" != "x" ]; then
-    sed -e "s|Alias .*|Alias $LOCATION /var/lib/dav/data/|" \
+    sed -e "s|Alias .*|Alias $LOCATION /data/|" \
         -i "$HTTPD_PREFIX/conf/conf-available/dav.conf"
 fi
 if [ "x$REALM" != "x" ]; then
@@ -99,7 +99,8 @@ if [ -e /privkey.pem ] && [ -e /cert.pem ]; then
 fi
 
 # Create directories for Dav data and lock database.
-[ ! -d "/var/lib/dav/data" ] && mkdir -p "/var/lib/dav/data"
+[ ! -d "/var/lib/dav" ] && mkdir -p "/var/lib/dav"
+[ ! -d "/data" ] && mkdir -p "/data"
 [ ! -e "/var/lib/dav/DavLock" ] && touch "/var/lib/dav/DavLock"
 chown -R www-data:www-data "/var/lib/dav"
 
