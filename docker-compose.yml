@@ -1,0 +1,15 @@
+version: '3'
+services:
+  webdav:
+    container_name: webdav
+    image: domx4q/webdav
+    restart: always
+    ports:
+      - '8087:80'
+    environment:
+      AUTH_TYPE: Digest
+      USERNAME: "<YOUR USERNAME>"
+      PASSWORD: "<YOUR PASSWORD>"
+    volumes:
+      - /volumes/webdav:/var/lib/dav
+      - /:/data
