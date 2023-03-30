@@ -1,3 +1,9 @@
+# my changes
+I've modified it, so it can be used on alredy exxisting files like `/` directory.
+So we've got a new mount.:
+the new mount is required and goes to the container `/data` directory.
+I've also provided a sample [docker compose file](docker-compose.yml) to see the new usage.
+**********************************************************
 ## Supported tags
 
 * [`2.4`, `latest` (*2.4/Dockerfile*)](https://github.com/BytemarkHosting/docker-webdav/blob/master/2.4/Dockerfile)
